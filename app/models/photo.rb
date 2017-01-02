@@ -5,4 +5,6 @@ class Photo < ApplicationRecord
 
   # Validations
 
+  validates :review_id, :presence => true
+
 end
