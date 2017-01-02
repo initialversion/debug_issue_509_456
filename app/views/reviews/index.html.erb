@@ -18,7 +18,7 @@
 
       <% @reviews.each do |review| %>
       <tr>
-        <td><%= review.date_idea_id %></td>
+        <td><%= review.date_idea.user_id %></td>
         <td><%= review.user_id %></td>
         <td><%= review.date_idea_rating %></td>
         <td><%= review.date_idea_rating_comment %></td>
