@@ -1,6 +1,6 @@
 class VenueDateRelationsController < ApplicationController
   def index
-    @venue_date_relations = VenueDateRelation.all
+    @venue_date_relations = VenueDateRelation.page(params[:page]).per(10)
 
     render("venue_date_relations/index.html.erb")
   end

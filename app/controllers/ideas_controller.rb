@@ -10,7 +10,7 @@ class IdeasController < ApplicationController
   end
 
   def index
-    @ideas = Idea.all
+    @ideas = Idea.page(params[:page]).per(10)
 
     render("ideas/index.html.erb")
   end

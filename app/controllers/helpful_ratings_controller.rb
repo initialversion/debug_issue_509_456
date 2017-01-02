@@ -10,7 +10,7 @@ class HelpfulRatingsController < ApplicationController
   end
 
   def index
-    @helpful_ratings = HelpfulRating.all
+    @helpful_ratings = HelpfulRating.page(params[:page]).per(10)
 
     render("helpful_ratings/index.html.erb")
   end
