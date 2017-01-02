@@ -13,6 +13,10 @@ class Idea < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :venues,
+             :through => :venue_date_relations,
+             :source => :venue
+
   # Validations
 
   validates :date_description, :uniqueness => { :scope => [:date_title] }

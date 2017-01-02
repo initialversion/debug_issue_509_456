@@ -6,6 +6,10 @@ class Venue < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :dates,
+             :through => :venue_date_relations,
+             :source => :date
+
   # Validations
 
 end
