@@ -14,6 +14,10 @@ class Review < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :helpful_users,
+             :through => :helpful_ratings,
+             :source => :user
+
   # Validations
 
   validates :date_idea_id, :uniqueness => { :scope => [:user_id] }

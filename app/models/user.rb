@@ -13,6 +13,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :helpful_reviews,
+             :through => :helpful_ratings,
+             :source => :review
+
   # Validations
 
   validates :first_name, :presence => true
