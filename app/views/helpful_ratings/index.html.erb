@@ -22,8 +22,11 @@
         <td><%= helpful_rating.user.email %></td>
         <td>
           <a href="/helpful_ratings/<%= helpful_rating.id %>" class="btn btn-primary">Show</a>
-          <a href="/helpful_ratings/<%= helpful_rating.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_helpful_rating/<%= helpful_rating.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == helpful_rating.user %>
+            <a href="/helpful_ratings/<%= helpful_rating.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_helpful_rating/<%= helpful_rating.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>

@@ -1,4 +1,14 @@
 class HelpfulRatingsController < ApplicationController
+  before_action :current_user_must_be_helpful_rating_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_helpful_rating_user
+    helpful_rating = HelpfulRating.find(params[:id])
+
+    unless current_user == helpful_rating.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @helpful_ratings = HelpfulRating.all
 
