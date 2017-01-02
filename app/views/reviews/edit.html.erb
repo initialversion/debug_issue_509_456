@@ -27,14 +27,8 @@
         <%= select_tag(:date_idea_id, options_from_collection_for_select(Idea.all, :id, :user_id, @review.date_idea_id), :class => "form-control") %>
       </div>
 
-      <!-- Label and input for user_id -->
-      <div class="form-group">
-        <label for="user_id" class="control-label">
-          User
-        </label>
-
-        <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @review.user_id), :class => "form-control") %>
-      </div>
+      
+      
 
       <!-- Label and input for date_idea_rating -->
       <div class="form-group">
