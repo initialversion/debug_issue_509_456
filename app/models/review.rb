@@ -1,6 +1,9 @@
 class Review < ApplicationRecord
   # Direct associations
 
+  belongs_to :date_idea,
+             :class_name => "Idea"
+
   # Indirect associations
 
   # Validations

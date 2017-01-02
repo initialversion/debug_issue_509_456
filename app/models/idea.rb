@@ -1,6 +1,10 @@
 class Idea < ApplicationRecord
   # Direct associations
 
+  has_many   :reviews,
+             :foreign_key => "date_idea_id",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
