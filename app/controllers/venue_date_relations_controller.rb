@@ -1,6 +1,7 @@
 class VenueDateRelationsController < ApplicationController
   def index
-    @venue_date_relations = VenueDateRelation.page(params[:page]).per(10)
+    @q = VenueDateRelation.ransack(params[:q])
+    @venue_date_relations = @q.result(:distinct => true).includes(:date, :venue).page(params[:page]).per(10)
 
     render("venue_date_relations/index.html.erb")
   end

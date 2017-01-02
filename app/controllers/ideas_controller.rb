@@ -10,7 +10,8 @@ class IdeasController < ApplicationController
   end
 
   def index
-    @ideas = Idea.page(params[:page]).per(10)
+    @q = Idea.ransack(params[:q])
+    @ideas = @q.result(:distinct => true).includes(:reviews, :venue_date_relations, :user, :venues, :reviewers).page(params[:page]).per(10)
 
     render("ideas/index.html.erb")
   end
