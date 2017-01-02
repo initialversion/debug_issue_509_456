@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h1>
+    Venue date relations
+    <a href="/venue_date_relations/new" class="btn btn-lg btn-success">New Venue date relation</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Date</th>
+        <th>Venue</th>
+        <th>Information</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @venue_date_relations.each do |venue_date_relation| %>
+      <tr>
+        <td><%= venue_date_relation.date_id %></td>
+        <td><%= venue_date_relation.venue_id %></td>
+        <td><%= venue_date_relation.information %></td>
+        <td>
+          <a href="/venue_date_relations/<%= venue_date_relation.id %>" class="btn btn-primary">Show</a>
+          <a href="/venue_date_relations/<%= venue_date_relation.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_venue_date_relation/<%= venue_date_relation.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
