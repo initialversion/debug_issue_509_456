@@ -1,6 +1,9 @@
 class Review < ApplicationRecord
   # Direct associations
 
+  has_many   :photos,
+             :dependent => :destroy
+
   belongs_to :date_idea,
              :class_name => "Idea"
 
