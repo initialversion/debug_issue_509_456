@@ -5,6 +5,8 @@ class Idea < ApplicationRecord
 
   # Validations
 
+  validates :price_category, :inclusion => { :in => [ 'Inexpensive', 'Mid-Range', 'Pricy', 'Luxurious' ]  }
+
   validates :user_id, :uniqueness => { :scope => [:date_title] }
 
   validates :user_id, :presence => true
