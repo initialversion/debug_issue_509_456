@@ -17,7 +17,13 @@
 
       <% @photos.each do |photo| %>
       <tr>
-        <td><%= photo.review.date_idea_id %></td>
+        <td>
+          <% if photo.review.present? %>
+            <a href="/reviews/<%= photo.review.id %>">
+              <%= photo.review.date_idea_id %>
+            </a>
+          <% end %>
+        </td>
         <td><img src='<%= photo.photo %>' class='img-responsive'></td>
         <td><%= photo.photo_description %></td>
         <td>

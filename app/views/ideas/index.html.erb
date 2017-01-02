@@ -18,7 +18,13 @@
 
       <% @ideas.each do |idea| %>
       <tr>
-        <td><%= idea.user.email %></td>
+        <td>
+          <% if idea.user.present? %>
+            <a href="/users/<%= idea.user.id %>">
+              <%= idea.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= idea.date_title %></td>
         <td><%= idea.date_description %></td>
         <td><%= idea.price_category %></td>

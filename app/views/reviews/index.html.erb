@@ -18,8 +18,20 @@
 
       <% @reviews.each do |review| %>
       <tr>
-        <td><%= review.date_idea.user_id %></td>
-        <td><%= review.user.email %></td>
+        <td>
+          <% if review.date_idea.present? %>
+            <a href="/ideas/<%= review.date_idea.id %>">
+              <%= review.date_idea.user_id %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if review.user.present? %>
+            <a href="/users/<%= review.user.id %>">
+              <%= review.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= review.date_idea_rating %></td>
         <td><%= review.date_idea_rating_comment %></td>
         <td>

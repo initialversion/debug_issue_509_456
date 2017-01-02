@@ -17,8 +17,20 @@
 
       <% @venue_date_relations.each do |venue_date_relation| %>
       <tr>
-        <td><%= venue_date_relation.date.user_id %></td>
-        <td><%= venue_date_relation.venue.date_id %></td>
+        <td>
+          <% if venue_date_relation.date.present? %>
+            <a href="/ideas/<%= venue_date_relation.date.id %>">
+              <%= venue_date_relation.date.user_id %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if venue_date_relation.venue.present? %>
+            <a href="/venues/<%= venue_date_relation.venue.id %>">
+              <%= venue_date_relation.venue.date_id %>
+            </a>
+          <% end %>
+        </td>
         <td><%= venue_date_relation.information %></td>
         <td>
           <a href="/venue_date_relations/<%= venue_date_relation.id %>" class="btn btn-primary">Show</a>

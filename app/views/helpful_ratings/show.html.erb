@@ -6,13 +6,25 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Review</dt>
-      <dd><%= @helpful_rating.review_id %></dd>
+      <dd>
+        <% if @helpful_rating.review.present? %>
+          <a href="/reviews/<%= @helpful_rating.review_id %>">
+            <%= @helpful_rating.review.date_idea_id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Helpful rate</dt>
       <dd><%= @helpful_rating.helpful_rate %></dd>
 
       <dt>User</dt>
-      <dd><%= @helpful_rating.user_id %></dd>
+      <dd>
+        <% if @helpful_rating.user.present? %>
+          <a href="/users/<%= @helpful_rating.user_id %>">
+            <%= @helpful_rating.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

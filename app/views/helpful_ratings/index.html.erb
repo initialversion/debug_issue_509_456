@@ -17,9 +17,21 @@
 
       <% @helpful_ratings.each do |helpful_rating| %>
       <tr>
-        <td><%= helpful_rating.review.date_idea_id %></td>
+        <td>
+          <% if helpful_rating.review.present? %>
+            <a href="/reviews/<%= helpful_rating.review.id %>">
+              <%= helpful_rating.review.date_idea_id %>
+            </a>
+          <% end %>
+        </td>
         <td><%= helpful_rating.helpful_rate %></td>
-        <td><%= helpful_rating.user.email %></td>
+        <td>
+          <% if helpful_rating.user.present? %>
+            <a href="/users/<%= helpful_rating.user.id %>">
+              <%= helpful_rating.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/helpful_ratings/<%= helpful_rating.id %>" class="btn btn-primary">Show</a>
           
