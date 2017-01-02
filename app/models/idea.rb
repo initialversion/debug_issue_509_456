@@ -1,6 +1,8 @@
 class Idea < ApplicationRecord
   # Direct associations
 
+  belongs_to :user
+
   has_many   :venue_date_relations,
              :foreign_key => "date_id",
              :dependent => :destroy
