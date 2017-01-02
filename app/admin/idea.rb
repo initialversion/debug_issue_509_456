@@ -1,5 +1,7 @@
 ActiveAdmin.register Idea do
 
+ permit_params :user_id, :date_title, :date_description, :price_category
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
