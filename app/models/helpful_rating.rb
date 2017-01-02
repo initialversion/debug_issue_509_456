@@ -5,6 +5,8 @@ class HelpfulRating < ApplicationRecord
 
   # Validations
 
+  validates :helpful_rate, :presence => true
+
   validates :review_id, :uniqueness => { :scope => [:user_id] }
 
   validates :review_id, :presence => true
