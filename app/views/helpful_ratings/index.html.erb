@@ -19,7 +19,7 @@
       <tr>
         <td><%= helpful_rating.review.date_idea_id %></td>
         <td><%= helpful_rating.helpful_rate %></td>
-        <td><%= helpful_rating.user_id %></td>
+        <td><%= helpful_rating.user.email %></td>
         <td>
           <a href="/helpful_ratings/<%= helpful_rating.id %>" class="btn btn-primary">Show</a>
           <a href="/helpful_ratings/<%= helpful_rating.id %>/edit" class="btn btn-warning">Edit</a>
