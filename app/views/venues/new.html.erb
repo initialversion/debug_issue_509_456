@@ -1,0 +1,100 @@
+<!-- Validation failure messages -->
+<% if @venue.errors.any? %>
+  <% @venue.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Venue</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_venue" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for date_id -->
+      <div class="form-group">
+        <label for="date_id" class="control-label">
+          Date
+        </label>
+
+        <input type="text" id="date_id" name="date_id" placeholder="Date" class="form-control" value="<%= @venue.date_id %>">
+      </div>
+
+      <!-- Label and input for venue_title -->
+      <div class="form-group">
+        <label for="venue_title" class="control-label">
+          Venue title
+        </label>
+
+        <input type="text" id="venue_title" name="venue_title" placeholder="Venue title" class="form-control" value="<%= @venue.venue_title %>">
+      </div>
+
+      <!-- Label and input for venue_description -->
+      <div class="form-group">
+        <label for="venue_description" class="control-label">
+          Venue description
+        </label>
+
+        <input type="text" id="venue_description" name="venue_description" placeholder="Venue description" class="form-control" value="<%= @venue.venue_description %>">
+      </div>
+
+      <!-- Label and input for street_address -->
+      <div class="form-group">
+        <label for="street_address" class="control-label">
+          Street address
+        </label>
+
+        <input type="text" id="street_address" name="street_address" placeholder="Street address" class="form-control" value="<%= @venue.street_address %>">
+      </div>
+
+      <!-- Label and input for city -->
+      <div class="form-group">
+        <label for="city" class="control-label">
+          City
+        </label>
+
+        <input type="text" id="city" name="city" placeholder="City" class="form-control" value="<%= @venue.city %>">
+      </div>
+
+      <!-- Label and input for state -->
+      <div class="form-group">
+        <label for="state" class="control-label">
+          State
+        </label>
+
+        <input type="text" id="state" name="state" placeholder="State" class="form-control" value="<%= @venue.state %>">
+      </div>
+
+      <!-- Label and input for zip_code -->
+      <div class="form-group">
+        <label for="zip_code" class="control-label">
+          Zip code
+        </label>
+
+        <input type="text" id="zip_code" name="zip_code" placeholder="Zip code" class="form-control" value="<%= @venue.zip_code %>">
+      </div>
+
+      <!-- Label and input for website_url -->
+      <div class="form-group">
+        <label for="website_url" class="control-label">
+          Website url
+        </label>
+
+        <input type="text" id="website_url" name="website_url" placeholder="Website url" class="form-control" value="<%= @venue.website_url %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Venue
+      </button>
+      or
+      <a href="/venues">Cancel</a>
+    </form>
+  </div>
+</div>
