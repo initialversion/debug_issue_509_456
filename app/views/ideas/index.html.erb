@@ -18,7 +18,7 @@
 
       <% @ideas.each do |idea| %>
       <tr>
-        <td><%= idea.user_id %></td>
+        <td><%= idea.user.email %></td>
         <td><%= idea.date_title %></td>
         <td><%= idea.date_description %></td>
         <td><%= idea.price_category %></td>
