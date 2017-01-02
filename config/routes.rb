@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Helpful_rating resource:
+  # CREATE
+  get "/helpful_ratings/new", :controller => "helpful_ratings", :action => "new"
+  post "/create_helpful_rating", :controller => "helpful_ratings", :action => "create"
+
+  # READ
+  get "/helpful_ratings", :controller => "helpful_ratings", :action => "index"
+  get "/helpful_ratings/:id", :controller => "helpful_ratings", :action => "show"
+
+  # UPDATE
+  get "/helpful_ratings/:id/edit", :controller => "helpful_ratings", :action => "edit"
+  post "/update_helpful_rating/:id", :controller => "helpful_ratings", :action => "update"
+
+  # DELETE
+  get "/delete_helpful_rating/:id", :controller => "helpful_ratings", :action => "destroy"
+  #------------------------------
+
   # Routes for the Photo resource:
   # CREATE
   get "/photos/new", :controller => "photos", :action => "new"
