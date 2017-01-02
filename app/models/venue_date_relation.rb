@@ -1,6 +1,9 @@
 class VenueDateRelation < ApplicationRecord
   # Direct associations
 
+  belongs_to :date,
+             :class_name => "Idea"
+
   # Indirect associations
 
   # Validations
