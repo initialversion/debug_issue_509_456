@@ -1,5 +1,7 @@
 ActiveAdmin.register VenueDateRelation do
 
+ permit_params :date_id, :venue_id, :information
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
