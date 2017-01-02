@@ -44,3 +44,65 @@
     </div>
   </div>
 </div>
+
+<!-- A Venue has many venue_date_relations -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Venue_date_relations
+      </li>
+
+      <% @venue.venue_date_relations.each do |venue_date_relation| %>
+        <li class="list-group-item">
+          <a href="/venue_date_relations/<%= venue_date_relation.id %>">
+            <%= venue_date_relation.date_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/venue_date_relations/<%= venue_date_relation.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/venue_date_relations/<%= venue_date_relation.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_venue_date_relation/<%= venue_date_relation.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Venue has many dates -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Dates
+      </li>
+
+      <% @venue.dates.each do |idea| %>
+        <li class="list-group-item">
+          <a href="/ideas/<%= idea.id %>">
+            <%= idea.user_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/ideas/<%= idea.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/ideas/<%= idea.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_idea/<%= idea.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
