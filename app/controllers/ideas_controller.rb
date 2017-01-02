@@ -16,6 +16,8 @@ class IdeasController < ApplicationController
   end
 
   def show
+    @venue_date_relation = VenueDateRelation.new
+    @review = Review.new
     @idea = Idea.find(params[:id])
 
     render("ideas/show.html.erb")
