@@ -5,6 +5,8 @@ class Review < ApplicationRecord
 
   # Validations
 
+  validates :date_idea_id, :uniqueness => { :scope => [:user_id] }
+
   validates :date_idea_id, :presence => true
 
   validates :date_idea_rating, :presence => true
