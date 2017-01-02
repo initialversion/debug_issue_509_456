@@ -1,4 +1,14 @@
 class IdeasController < ApplicationController
+  before_action :current_user_must_be_idea_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_idea_user
+    idea = Idea.find(params[:id])
+
+    unless current_user == idea.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @ideas = Idea.all
 
