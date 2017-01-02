@@ -5,6 +5,8 @@ class Idea < ApplicationRecord
 
   # Validations
 
+  validates :date_description, :uniqueness => { :scope => [:date_title] }
+
   validates :date_description, :presence => true
 
   validates :date_title, :uniqueness => { :scope => [:user_id] }
