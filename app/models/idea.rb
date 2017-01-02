@@ -13,6 +13,10 @@ class Idea < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :reviewers,
+             :through => :reviews,
+             :source => :user
+
   has_many   :venues,
              :through => :venue_date_relations,
              :source => :venue
