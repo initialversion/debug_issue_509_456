@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @review.errors.any? %>
+  <% @review.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Review</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_review" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for date_idea_id -->
+      <div class="form-group">
+        <label for="date_idea_id" class="control-label">
+          Date idea
+        </label>
+
+        <input type="text" id="date_idea_id" name="date_idea_id" placeholder="Date idea" class="form-control" value="<%= @review.date_idea_id %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @review.user_id %>">
+      </div>
+
+      <!-- Label and input for date_idea_rating -->
+      <div class="form-group">
+        <label for="date_idea_rating" class="control-label">
+          Date idea rating
+        </label>
+
+        <input type="text" id="date_idea_rating" name="date_idea_rating" placeholder="Date idea rating" class="form-control" value="<%= @review.date_idea_rating %>">
+      </div>
+
+      <!-- Label and input for date_idea_rating_comment -->
+      <div class="form-group">
+        <label for="date_idea_rating_comment" class="control-label">
+          Date idea rating comment
+        </label>
+
+        <input type="text" id="date_idea_rating_comment" name="date_idea_rating_comment" placeholder="Date idea rating comment" class="form-control" value="<%= @review.date_idea_rating_comment %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Review
+      </button>
+      or
+      <a href="/reviews">Cancel</a>
+    </form>
+  </div>
+</div>
