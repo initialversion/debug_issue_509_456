@@ -5,6 +5,8 @@ class VenueDateRelation < ApplicationRecord
 
   # Validations
 
+  validates :information, :presence => true
+
   validates :venue_id, :uniqueness => { :scope => [:date_id] }
 
   validates :venue_id, :presence => true
