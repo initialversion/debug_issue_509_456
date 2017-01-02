@@ -1,6 +1,8 @@
 class HelpfulRating < ApplicationRecord
   # Direct associations
 
+  belongs_to :review
+
   # Indirect associations
 
   # Validations
