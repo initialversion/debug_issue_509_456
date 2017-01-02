@@ -17,7 +17,7 @@
 
       <% @venue_date_relations.each do |venue_date_relation| %>
       <tr>
-        <td><%= venue_date_relation.date_id %></td>
+        <td><%= venue_date_relation.date.user_id %></td>
         <td><%= venue_date_relation.venue_id %></td>
         <td><%= venue_date_relation.information %></td>
         <td>
