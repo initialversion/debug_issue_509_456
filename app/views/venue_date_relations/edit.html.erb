@@ -24,7 +24,7 @@
           Date
         </label>
 
-        <input type="text" id="date_id" name="date_id" placeholder="Date" class="form-control" value="<%= @venue_date_relation.date_id %>">
+        <%= select_tag(:date_id, options_from_collection_for_select(Idea.all, :id, :user_id, @venue_date_relation.date_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for venue_id -->
